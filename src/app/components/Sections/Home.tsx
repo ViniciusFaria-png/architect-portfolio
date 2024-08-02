@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import { Montserrat } from 'next/font/google';
 import Buttons from '../common/Button'
+import Projects from './Projects';
+import ScrollLink from '../common/ScrollLink';
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -17,7 +19,7 @@ export default function Home() {
         <div className='bg-orange-300 overflow-x-hidden'>
             <div className='relative h-screen overflow-hidden'>
                 <Image 
-                src="/arqbg1.jpg"
+                src="/Correções_2 - Foto.png"
                 alt="bg-home"
                 width={1920}
                 height={1080}
@@ -26,20 +28,20 @@ export default function Home() {
                 <div className='absolute inset-0 bg-black opacity-50'></div>              
                 <div className='absolute inset-0 flex flex-col items-center text-center justify-center text-white p-8 md:p-4'>
                         <h1 className='text-5x1 md:text-5xl font-bold mb-5 mt-5 text-center'>
-                            Arquiteto
+                            Vitor Hugo Costa de Lara
                         </h1>
                         <h2 className='text-5x1 md:text-5xl font-bold mb-4 text-center'>
-                            Vitor Hugo Costa de Lara
+                            Arquiteto
                         </h2>
-                        <div className='animate-bounce w-8 h-8 md:w-12 md:h-12 cursor-pointer'>
-                            <ArrowDownIcon />
-                        </div>
-                        
-                        
+                        <ScrollLink id='Projects' className="animate-bounce w-8 h-8 md:w-12 md:h-12 cursor-pointer">
+                          <ArrowDownIcon />
+                        </ScrollLink>                  
                 </div>
             </div>
         </div>
-        
+        <section id="Projects">
+          <Projects></Projects>
+        </section>
       </main>
     );
   }
